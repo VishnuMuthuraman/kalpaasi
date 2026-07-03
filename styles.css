@@ -264,3 +264,247 @@ body {
     .perks-list { max-width: 280px; margin-bottom: 40px; }
     .perks-list li { font-size: 1rem; margin-bottom: 18px; }
 }
+
+/* ==========================================
+   6. PREMIUM MENUS SYSTEM LAYOUTS
+   ========================================== */
+.menu-page-container {
+    padding: 140px 6% 80px 6%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu-main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.8rem;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.menu-subtitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--white);
+    opacity: 0.8;
+}
+
+.menu-section-container {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(197, 155, 78, 0.2);
+    border-radius: 12px;
+    padding: 40px 30px;
+    margin-bottom: 50px;
+}
+
+.category-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    color: var(--gold);
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.heading-price {
+    font-size: 1.2rem;
+    color: var(--white);
+    opacity: 0.8;
+    font-family: 'Montserrat', sans-serif;
+    vertical-align: middle;
+}
+
+/* BYOB Flex Wrapper for side-by-side photo layout */
+.byob-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* BYOB Board - Left Side Columns */
+.byob-board {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+/* BYOB Image Box - Right Side Photo Frame */
+.byob-image-box {
+    flex: 1;
+    min-width: 280px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(197, 155, 78, 0.2);
+}
+
+.byob-step-title {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.byob-step-title span {
+    background-color: var(--gold);
+    color: var(--deep-green);
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.filling-group-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff6b6b;
+    margin: 15px 0 10px 0;
+    font-weight: 700;
+}
+
+.filling-group-label.vegetarian {
+    color: #2ecc71;
+}
+
+.byob-list {
+    list-style: none;
+}
+
+.byob-list li {
+    font-size: 0.95rem;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.menu-note {
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.addons-bar {
+    margin-top: 35px;
+    border-top: 1px solid rgba(197, 155, 78, 0.2);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.addons-title {
+    color: var(--gold);
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+/* Two Column Layout Cards for Photos + Text */
+.menu-flex-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.menu-block-card {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(197, 155, 78, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.menu-block-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.card-img-wrapper {
+    flex: 1;
+    min-width: 40%;
+    max-height: 450px;
+}
+
+.menu-display-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content-wrapper {
+    flex: 1.5;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content-wrapper.full-width {
+    flex: 1;
+    width: 100%;
+}
+
+.menu-items-list {
+    list-style: none;
+}
+
+.menu-items-list li {
+    font-size: 1rem;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-items-list.split-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px 30px;
+}
+
+.menu-items-list.split-grid li {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* Unified Mobile and Tablet Media Queries */
+@media (max-width: 992px) {
+    .byob-wrapper {
+        flex-direction: column;
+    }
+    .byob-image-box {
+        width: 100%;
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-page-container { padding-top: 180px; }
+    .menu-main-title { font-size: 2.8rem; }
+    .menu-block-card, .menu-block-card.reverse {
+        flex-direction: column;
+    }
+    .card-img-wrapper {
+        max-height: 250px;
+    }
+    .card-content-wrapper {
+        padding: 25px;
+    }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Kalpaasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-logo"><a href="index.html">kalpaasi</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html" class="active">Menus</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MENU CONTAINER -->
+    <main class="menu-page-container">
+        <header class="menu-header">
+            <h1 class="menu-main-title">Our Menu</h1>
+            <p class="menu-subtitle">Chettinad Flavours, Reimagined</p>
+        </header>
+
+        <!-- CATEGORY: BUILD YOUR OWN BURGER -->
+        <section class="menu-section-container byob-section">
+            <h2 class="category-heading">Build Your Own Burger</h2>
+            
+            <div class="byob-wrapper">
+                <!-- Burger Customization Columns -->
+                <div class="byob-board">
+                    <!-- Step 1 -->
+                    <div class="byob-column">
+                        <h3 class="byob-step-title"><span>1</span> Choice of Bun</h3>
+                        <ul class="byob-list">
+                            <li>Carrot Ajwain Bun</li>
+                            <li>Beetroot Fennel Bun</li>
+                            <li>Five-Spice Spinach Bun</li>
+                            <li>Coriander Chilli Bun</li>
+                            <li>Tomato Curry Leaf Bun</li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="byob-column">
+                        <h3 class="byob-step-title"><span>2</span> Choice of Filling</h3>
+                        <div class="filling-group-label">Non-Vegetarian</div>
+                        <ul class="byob-list">
+                            <li>Chicken Chettinad <span class="price">₹299</span></li>
+                            <li>Mutton Chettinad <span class="price">₹299</span></li>
+                            <li>Mixed Seafood <span class="price">₹399</span></li>
+                            <li>Seer Fish <span class="price">₹499</span></li>
+                            <li>Prawn <span class="price">₹499</span></li>
+                        </ul>
+                        <div class="filling-group-label vegetarian">Vegetarian</div>
+                        <ul class="byob-list">
+                            <li>Mixed Veg <span class="price">₹199</span></li>
+                            <li>Sweet Potato <span class="price">₹199</span></li>
+                            <li>Beetroot <span class="price">₹199</span></li>
+                            <li>Spicy Paneer <span class="price">₹199</span></li>
+                        </ul>
+                        <div class="menu-note">⚡ Every burger comes with a dip.</div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="byob-column">
+                        <h3 class="byob-step-title"><span>3</span> Choice of Sauce</h3>
+                        <ul class="byob-list">
+                            <li>Chettinad Sauce</li>
+                            <li>Coconut Chilli Sauce</li>
+                            <li>Malabar Sauce</li>
+                            <li>Fiery Sauce</li>
+                            <li>Chef's Special Sauce</li>
+                            <li>Spicy Tamarind Sauce</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Live Burger Image Showcase (524A7832.jpg) -->
+                <div class="byob-image-box">
+                    <img src="524A7832.jpg" alt="Kalpaasi Signature Green Bun Burger" class="menu-display-photo">
+                </div>
+            </div>
+
+            <!-- Optional Add-ons -->
+            <div class="addons-bar">
+                <span class="addons-title">Optional Add-Ons:</span>
+                <span class="addon-item">Caramelised Onions</span> • 
+                <span class="addon-item">Buttered Broccoli</span>
+            </div>
+        </section>
+
+        <!-- TWO COLUMN CATEGORIES BLOCK -->
+        <div class="menu-flex-layout">
+            
+            <!-- TACO TARTS (524A7813.jpg) -->
+            <section class="menu-block-card">
+                <div class="card-img-wrapper">
+                    <img src="524A7813.jpg" alt="Kalpaasi Savory Taco Tarts" class="menu-display-photo">
+                </div>
+                <div class="card-content-wrapper">
+                    <h2 class="category-heading">Taco Tarts</h2>
+                    <ul class="menu-items-list">
+                        <li><span>Mutton Pepper Fry</span> <span class="price">₹249</span></li>
+                        <li><span>Pallipalayam Chicken</span> <span class="price">₹249</span></li>
+                        <li><span>Prawn Ghee Roast</span> <span class="price">₹249</span></li>
+                        <li><span>Raw Mango & Coconut</span> <span class="price">₹149</span></li>
+                        <li><span>Mixed Bean & Bell Peppers</span> <span class="price">₹149</span></li>
+                        <li><span>Mushroom Pepper Fry</span> <span class="price">₹149</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SIDES (524A7828.jpg) -->
+            <section class="menu-block-card reverse">
+                <div class="card-content-wrapper">
+                    <h2 class="category-heading">Sides</h2>
+                    <ul class="menu-items-list">
+                        <li><span>Mutton Kola Urundai</span> <span class="price">₹299</span></li>
+                        <li><span>Karuveppillai Prawn</span> <span class="price">₹299</span></li>
+                        <li><span>Chicken Ghee Roast</span> <span class="price">₹299</span></li>
+                        <li><span>Pallipalayam Paneer</span> <span class="price">₹199</span></li>
+                        <li><span>Raw Banana Croquettes</span> <span class="price">₹199</span></li>
+                        <li><span>Corn Bell Pepper Fry</span> <span class="price">₹199</span></li>
+                    </ul>
+                    <div class="menu-note">⚡ Every side comes with a dip.</div>
+                </div>
+                <div class="card-img-wrapper">
+                    <img src="524A7828.jpg" alt="Kalpaasi Mutton Kola Urundai" class="menu-display-photo">
+                </div>
+            </section>
+
+            <!-- DIPS (Accompanied by Side Item 524A7893.jpg) -->
+            <section class="menu-block-card">
+                <div class="card-content-wrapper">
+                    <h2 class="category-heading">Dips <span class="heading-price">(₹15 each)</span></h2>
+                    <ul class="menu-items-list split-grid">
+                        <li>Curry Leaves Dip</li>
+                        <li>Mint Chilli Dip</li>
+                        <li>Spicy Mustard Dip</li>
+                        <li>Garlic Coriander Dip</li>
+                        <li>Spicy Tartar Dip</li>
+                        <li>Spicy Gongura Dip</li>
+                        <li>Honey Ginger Dip</li>
+                    </ul>
+                </div>
+                <div class="card-img-wrapper">
+                    <img src="524A7893.jpg" alt="Kalpaasi House Dips and Paneer" class="menu-display-photo">
+                </div>
+            </section>
+
+            <!-- BEVERAGES (524A7866.jpg) -->
+            <section class="menu-block-card reverse">
+                <div class="card-content-wrapper">
+                    <h2 class="category-heading">Beverages - Sarbath <span class="heading-price">(₹79 each)</span></h2>
+                    <ul class="menu-items-list">
+                        <li>Lemon Nannari</li>
+                        <li>Watermelon Nannari</li>
+                        <li>Pineapple Nannari</li>
+                        <li>Apple Nannari</li>
+                    </ul>
+                </div>
+                <div class="card-img-wrapper">
+                    <img src="524A7866.jpg" alt="Kalpaasi Signature Nannari Sarbath" class="menu-display-photo">
+                </div>
+            </section>
+
+            <!-- DESSERTS -->
+            <section class="menu-block-card">
+                <div class="card-content-wrapper full-width">
+                    <h2 class="category-heading">Desserts <span class="heading-price">(₹149 each)</span></h2>
+                    <ul class="menu-items-list split-grid">
+                        <li>Grandma's Apple Halwa</li>
+                        <li>Kavuni Arisi</li>
+                        <li>Carrot Cake</li>
+                        <li>Athirasam Cake</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>
