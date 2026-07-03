@@ -505,13 +505,16 @@ body {
     .card-img-wrapper {
         flex: 1;
         min-width: 40%;
-        /* Remove any max-height here so it can match the text column perfectly */
-        display: flex; 
+        background-color: #1a0f0a; /* Dark espresso wood tone that seamlessly blends with the table edges */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .menu-display-photo {
         width: 100%;
         height: 100%;
-        display: block;
         object-fit: cover;
+        object-position: center bottom; /* Keeps the golden bowl perfectly positioned while stretching the wood up top */
+        display: block;
     }
 }
