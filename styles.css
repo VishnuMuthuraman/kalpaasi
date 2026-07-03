@@ -502,9 +502,14 @@ body {
         flex-direction: column;
     }
     .card-img-wrapper {
-        max-height: 250px;
+        flex: 1;
+        min-width: 40%;
+        /* Remove any max-height here so it can match the text column perfectly */
+        display: flex; 
     }
-    .card-content-wrapper {
-        padding: 25px;
+    .menu-display-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This forces the image to perfectly fill the box and auto-crop without distortion */
     }
 }
