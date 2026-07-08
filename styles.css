@@ -221,6 +221,8 @@ body {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
+    justify-content: center; /* Add this line to center the text alignment */
+    text-align: center;      /* Add this line as a backup safety net */
 }
 
 .instagram-btn {
@@ -262,7 +264,11 @@ body {
     .card-title { font-size: 1.8rem; letter-spacing: 2px; }
     .card-handle { font-size: 1.3rem; margin-bottom: 35px; }
     .perks-list { max-width: 280px; margin-bottom: 40px; }
-    .perks-list li { font-size: 1rem; margin-bottom: 18px; }
+    .perks-list li { 
+        font-size: 1rem; 
+        margin-bottom: 18px; 
+        justify-content: center; /* Ensures it stays centered on computer screens too! */
+    }
 }
 
 /* ==========================================
