@@ -8,18 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
-
-    <!-- OVERRIDE FOR MOBILE DEVICES -->
-    <style>
-        @media (max-width: 768px) {
-            .mobile-video-card {
-                grid-template-columns: 1fr !important; /* Stack vertically on mobile */
-            }
-            .mobile-video-wrapper {
-                height: 400px !important; /* Give the video room to breathe */
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -57,34 +45,43 @@
             </p>
         </section>
 
-        <!-- SECTION 2: WHAT IS KALPAASI (THE INGREDIENT & ORIGINS) -->
-        <section class="menu-section-container" style="padding: 50px 40px; margin-bottom: 40px; border-left: 3px solid var(--gold);">
-            <h2 class="category-heading" style="margin-bottom: 20px;">The Story of Kalpaasi</h2>
-            <p style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; line-height: 1.8; color: var(--white); margin-bottom: 20px; font-weight: 300;">
-                In Tamil, <strong>Kalpaasi</strong> translates literally to "Stone Moss"—known globally as Black Stone Flower (<em>Parmotrema perlatum</em>). It is a rare, enigmatic lichen that grows organically on rocks and trees in pristine high-altitude environments, particularly across the hill stations of Southern India.
-            </p>
-            <p style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; line-height: 1.8; color: var(--white); font-weight: 300; margin: 0;">
-                While completely odorless in its raw, dry form, Kalpaasi holds a magical culinary secret: the moment it hits hot oil or ghee, it blooms, releasing an incredibly intense, earthy, and smoky umami aroma. It is the absolute crown jewel and defining signature of authentic Chettinad cuisine. Without Kalpaasi, a Chettinad curry is simply incomplete. We chose this name because it perfectly embodies our philosophy—taking a rare, traditional element of heritage and letting it bloom into something extraordinary.
-            </p>
-        </section>
-
-        <!-- SECTION 3: OWNER STORY VIDEO SPLIT SECTION -->
-        <section class="menu-block-card">
+        <!-- SECTION 2: THE STORY OF KALPAASI (VIDEO RIGHT, TEXT LEFT) -->
+        <section class="menu-block-card" style="margin-bottom: 40px;">
             
-            <!-- Video Player Box -->
-            <div class="card-img-wrapper" style="pointer-events: auto !important; overflow: visible !important;">
-                <!-- Completely removed the custom onclick so the phone's native controls can do their job -->
-                <video controls playsinline webkit-playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover; display: block; z-index: 10; position: relative;" poster="images/Burger.jpg">
+            <!-- Left Side: Content Quote Box -->
+            <div class="card-content-wrapper" style="display: flex; flex-direction: column; justify-content: center; order: 1;">
+                <h2 class="category-heading" style="margin-bottom: 20px;">The Story of Kalpaasi</h2>
+                <p style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; line-height: 1.8; font-style: italic; color: var(--cream); margin: 0;">
+                    "Here is the story behind Kalpaasi given by the owner Ramesh Palaniappan."
+                </p>
+            </div>
+
+            <!-- Right Side: Video Player Box -->
+            <div class="card-img-wrapper" style="pointer-events: auto !important; overflow: visible !important; order: 2;">
+                <video controls playsinline webkit-playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover; display: block; z-index: 10; position: relative;">
                     <source src="videos/aboutKalpaasi.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
 
-            <!-- Content Quote Box -->
-            <div class="card-content-wrapper" style="display: flex; flex-direction: column; justify-content: center;">
+        </section>
+
+        <!-- SECTION 3: OWNER INSPIRATION VIDEO SPLIT SECTION (VIDEO LEFT, TEXT RIGHT) -->
+        <section class="menu-block-card">
+            
+            <!-- Left Side: Video Player Box -->
+            <div class="card-img-wrapper" style="pointer-events: auto !important; overflow: visible !important; order: 1;">
+                <video controls playsinline webkit-playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover; display: block; z-index: 10; position: relative;" poster="images/Burger.jpg">
+                    <source src="videos/aboutMenu.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Right Side: Content Quote Box -->
+            <div class="card-content-wrapper" style="display: flex; flex-direction: column; justify-content: center; order: 2;">
                 <h3 class="category-heading" style="margin-bottom: 20px;">Our Inspiration</h3>
                 <p style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; line-height: 1.8; font-style: italic; color: var(--cream); margin: 0;">
-                    "Here is the story behind Kalpaasi given by the owner Ramesh Palaniappan."
+                    "Here is the inspiration behind the menus given by the owner Ramesh Palaniappan."
                 </p>
             </div>
 
