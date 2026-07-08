@@ -529,13 +529,12 @@ body {
     .menu-block-card.reverse .card-img-wrapper {
         order: 1; /* image always on top on mobile */
         height: auto;
-        aspect-ratio: 4 / 3;
-        background-color: rgba(0, 0, 0, 0.2); /* fills any letterboxing from object-fit: contain below */
     }
 
     .card-img-wrapper .menu-display-photo,
     .menu-block-card.reverse .card-img-wrapper .menu-display-photo {
-        object-fit: contain !important; /* shows the full photo instead of cropping to fill the box */
+        height: auto !important; /* image sizes itself from its own natural aspect ratio */
+        object-fit: contain !important; /* safety net, has no visible effect once height is auto */
     }
 
     .card-content-wrapper,
