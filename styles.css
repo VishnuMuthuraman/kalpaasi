@@ -208,9 +208,9 @@ body {
 
 .perks-list {
     list-style: none;
-    text-align: left;
+    text-align: center;      /* Forces the list container layout to center its inline contents */
     max-width: 250px;
-    margin: 0 auto 35px auto;
+    margin: 0 auto 35px auto; /* The 'auto' on left/right centers the block itself */
 }
 
 .perks-list li {
@@ -267,7 +267,7 @@ body {
     .perks-list li { 
         font-size: 1rem; 
         margin-bottom: 18px; 
-        justify-content: center; /* Ensures it stays centered on computer screens too! */
+        text-align: center; 
     }
 }
 
