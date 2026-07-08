@@ -323,14 +323,14 @@ body {
 .byob-wrapper {
     display: flex;
     gap: 30px;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 /* BYOB Board - Left Side Columns */
 .byob-board {
     flex: 2;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
 }
 
@@ -418,7 +418,16 @@ body {
     margin-right: 10px;
 }
 
-/* Two Column Layout Cards for Photos + Text */
+/* Two Column Layout Cards for Photos + Text
+   ---------------------------------------------------------
+   Rebuilt with CSS Grid instead of absolute-positioned image
+   + percentage-width text. The old approach required exact
+   width/margin math between .card-img-wrapper and
+   .card-content-wrapper to avoid overlap, and it was easy for
+   them to drift out of sync (which is what was covering your
+   menu text). Grid removes that failure mode entirely: each
+   side is a real grid track, so they can never overlap.
+   ---------------------------------------------------------- */
 .menu-flex-layout {
     display: flex;
     flex-direction: column;
@@ -426,8 +435,8 @@ body {
 }
 
 .menu-block-card {
-    display: flex;
-    position: relative; /* Absolute base for pinning images */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* image | text */
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(197, 155, 78, 0.15);
     border-radius: 12px;
@@ -435,34 +444,27 @@ body {
     min-height: 480px; /* Establishes uniform minimal desktop frame size */
 }
 
-.card-content-wrapper {
-    flex: 1.5;
-    padding: 50px 40px;
-    width: 60%; /* Locks text layout safely to its side */
+.menu-block-card.reverse {
+    grid-template-columns: 1.5fr 1fr; /* text | image */
 }
 
-/* Reverse layout setup to switch text alignment cleanly */
+.card-content-wrapper {
+    padding: 50px 40px;
+    order: 2; /* text on the right by default */
+}
+
 .menu-block-card.reverse .card-content-wrapper {
-    margin-left: 40%;
+    order: 1; /* text on the left when reversed */
 }
 
 .card-img-wrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 40%;
+    order: 1; /* image on the left by default */
     height: 100%;
+    overflow: hidden;
 }
 
-/* Pins default image wrapper to the absolute left edge */
-.menu-block-card .card-img-wrapper {
-    left: 0;
-}
-
-/* Pins reversed card image wrapper to the absolute right edge */
 .menu-block-card.reverse .card-img-wrapper {
-    right: 0;
-    left: auto;
+    order: 2; /* image on the right when reversed */
 }
 
 .menu-display-photo {
@@ -473,8 +475,7 @@ body {
 }
 
 .card-content-wrapper.full-width {
-    flex: 1;
-    width: 100%;
+    grid-column: 1 / -1;
 }
 
 .menu-items-list {
@@ -513,26 +514,33 @@ body {
 @media (max-width: 768px) {
     .menu-page-container { padding-top: 180px; }
     .menu-main-title { font-size: 2.8rem; }
-    
-    /* Disables absolute pinning on mobile to stack layout correctly */
-    .menu-block-card {
-        flex-direction: column;
-        min-height: auto;
-    }
+
+    /* Collapse every two-column card to a single stacked column */
+    .menu-block-card,
     .menu-block-card.reverse {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
-    .card-content-wrapper, 
+
+    .card-img-wrapper,
+    .menu-block-card.reverse .card-img-wrapper {
+        order: 1; /* image always on top on mobile */
+        height: 260px;
+    }
+
+    .card-content-wrapper,
     .menu-block-card.reverse .card-content-wrapper {
-        width: 100%;
+        order: 2;
         padding: 30px 20px;
-        margin-left: 0;
     }
-    .card-img-wrapper {
-        position: relative;
-        width: 100%;
-        height: 300px;
-        left: auto !important;
-        right: auto !important;
+}
+
+@media (max-width: 480px) {
+    .card-img-wrapper,
+    .menu-block-card.reverse .card-img-wrapper {
+        height: 200px;
+    }
+    .card-content-wrapper,
+    .menu-block-card.reverse .card-content-wrapper {
+        padding: 24px 18px;
     }
 }
