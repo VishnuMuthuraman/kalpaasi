@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Kalpaasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-logo"><a href="index.html">kalpaasi</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menus</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- CONTACT PAGE MAIN CONTAINER -->
+    <main class="menu-page-container">
+        
+        <!-- HEADER -->
+        <header class="menu-header">
+            <h1 class="menu-main-title">Contact Us</h1>
+            <p class="menu-subtitle">Visit Us or Get in Touch</p>
+        </header>
+
+        <!-- SPLIT CONTACT DETAILS & HOURS CARD -->
+        <section class="menu-block-card" style="margin-bottom: 40px;">
+            
+            <!-- Left Side: Core Info Details -->
+            <div class="card-content-wrapper" style="display: flex; flex-direction: column; justify-content: center; gap: 30px;">
+                
+                <div>
+                    <h3 class="category-heading" style="font-size: 1.6rem; margin-bottom: 10px;">Our Location</h3>
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--white); line-height: 1.6; font-weight: 300;">
+                        11, Wheat Croft Rd, Nungambakkam,<br>Chennai, Tamil Nadu 600034
+                    </p>
+                    <a href="https://maps.google.com/?q=11,+Wheat+Croft+Rd,+Nungambakkam,+Chennai" target="_blank" style="display: inline-block; margin-top: 10px; color: var(--gold); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                        📍 Get Directions
+                    </a>
+                </div>
+
+                <div>
+                    <h3 class="category-heading" style="font-size: 1.6rem; margin-bottom: 10px;">Reach Out</h3>
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--white); line-height: 1.8; font-weight: 300; margin-bottom: 5px;">
+                        <strong>Phone:</strong> <a href="tel:+919003617080" style="color: var(--white); text-decoration: none; transition: var(--transition);">+91 900-361-7080</a>
+                    </p>
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--white); line-height: 1.8; font-weight: 300;">
+                        <strong>Email:</strong> <a href="mailto:info@kalpaasi.com" style="color: var(--white); text-decoration: none; transition: var(--transition);">info@kalpaasi.com</a>
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Right Side: Operating Hours & Event Callout -->
+            <div class="card-content-wrapper" style="background-color: rgba(255, 255, 255, 0.01); border-left: 1px solid rgba(197, 155, 78, 0.1); display: flex; flex-direction: column; justify-content: center; gap: 20px;">
+                
+                <div>
+                    <h3 class="category-heading" style="font-size: 1.6rem; margin-bottom: 10px;">Opening Times</h3>
+                    <ul class="menu-items-list">
+                        <li style="font-size: 1rem; padding: 10px 0; border-bottom: 1px dashed rgba(255, 255, 255, 0.1);">
+                            <span>All Days</span>
+                            <span class="price" style="font-weight: 500; color: var(--white);">11:00 AM - 11:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <h3 class="category-heading" style="font-size: 1.3rem; margin-bottom: 8px;">Reservations</h3>
+                    <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: var(--cream); line-height: 1.6; font-style: italic;">
+                        Planning a gathering or celebration? Give us a call or drop us an email to reserve your table in advance.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- LIVE INTERACTIVE GOOGLE MAP EMBED SECTION -->
+        <section class="menu-section-container" style="padding: 0; overflow: hidden; border-radius: 12px; height: 450px;">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m4!2m2!1d80.2415!2d13.0612!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52666fa20db1b3%3A0x6b8014e7aebadcfb!2sWheat%20Croft%20Rd%2C%20Nungambakkam%2C%20Chennai%2C%20Tamil%20Nadu%20600034!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style="border:0; display: block; filter: grayscale(100%) invert(92%) sepia(8%) saturate(300%) hue-rotate(90deg) brightness(95%) contrast(90%);" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+
+    </main>
+
+</body>
+</html>
