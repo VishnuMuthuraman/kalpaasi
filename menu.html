@@ -32,10 +32,11 @@
         <!-- CATEGORY: BUILD YOUR OWN BURGER -->
         <section class="menu-section-container byob-section">
             <h2 class="category-heading">Build Your Own Burger</h2>
-            
-            <div class="byob-wrapper">
+    
+            <div class="byob-wrapper" style="display: grid !important; grid-template-columns: 2.2fr 1fr !important; gap: 40px !important; align-items: stretch !important;">
+        
                 <!-- Burger Customization Columns -->
-                <div class="byob-board">
+                <div class="byob-board" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 30px !important;">
                     <!-- Step 1 -->
                     <div class="byob-column">
                         <h3 class="byob-step-title"><span>1</span> Choice of Bun</h3>
@@ -84,8 +85,8 @@
                 </div>
 
                 <!-- Live Burger Image Showcase -->
-                <div class="byob-image-box">
-                    <img src="images/Burger.jpg" alt="Kalpaasi Signature Green Bun Burger" class="menu-display-photo">
+                <div class="byob-image-box" style="position: static !important; width: 100% !important; height: 100% !important; min-height: 100% !important; overflow: hidden !important; border-radius: 12px !important;">
+                    <img src="images/Burger.jpg" alt="Kalpaasi Signature Green Bun Burger" class="menu-display-photo" style="width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important;">
                 </div>
             </div>
 
