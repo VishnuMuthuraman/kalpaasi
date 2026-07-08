@@ -511,11 +511,12 @@ body {
     }
     .byob-image-box {
         width: 100%;
-        height: auto;
+        height: 340px;
     }
     .byob-image-box img {
-        height: auto !important; /* image sizes itself from its own natural aspect ratio, nothing gets cropped */
-        object-fit: contain !important;
+        height: 100% !important; /* fills the box, cropping only from the top */
+        object-fit: cover !important;
+        object-position: center bottom !important; /* always keeps the plate fully visible at the bottom */
     }
 }
 
