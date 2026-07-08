@@ -206,23 +206,28 @@ body {
     margin-bottom: 30px;
 }
 
-.perks-list {
-    list-style: none;
-    text-align: center;      /* Forces the list container layout to center its inline contents */
-    max-width: 250px;
-    margin: 0 auto 35px auto; /* The 'auto' on left/right centers the block itself */
+/* --- BULLETPROOF INSTAGRAM LIST CENTERING --- */
+
+/* Targets the ul wrapper box and forces it down the exact center of the card */
+ul.perks-list {
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 0 auto 35px auto !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
 }
 
-.perks-list li {
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Add this line to center the text alignment */
-    text-align: center;      /* Add this line as a backup safety net */
+/* Targets each text item inside the list and strips away left alignment overrides */
+ul.perks-list li {
+    display: block !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 .instagram-btn {
