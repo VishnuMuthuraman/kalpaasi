@@ -8,9 +8,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
+
+    <!-- OVERRIDE FOR MOBILE DEVICES -->
+    <style>
+        @media (max-width: 768px) {
+            .mobile-video-card {
+                grid-template-columns: 1fr !important; /* Stack vertically on mobile */
+            }
+            .mobile-video-wrapper {
+                height: 400px !important; /* Give the video room to breathe */
+            }
+        }
+    </style>
 </head>
 <body>
 
+    <!-- NAVIGATION BAR -->
     <nav class="navbar">
         <div class="nav-logo"><a href="index.html">kalpaasi</a></div>
         <ul class="nav-links">
@@ -21,13 +34,16 @@
         </ul>
     </nav>
 
+    <!-- MAIN ABOUT PAGE CONTAINER -->
     <main class="menu-page-container">
         
+        <!-- HEADER -->
         <header class="menu-header">
             <h1 class="menu-main-title">Our Story</h1>
             <p class="menu-subtitle">Heritage, Flavor, and Identity</p>
         </header>
 
+        <!-- SECTION 1: ABOUT INTRODUCTION -->
         <section class="menu-section-container" style="padding: 50px 40px; margin-bottom: 40px;">
             <h2 class="category-heading" style="margin-bottom: 20px;">About Kalpaasi</h2>
             <p style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; line-height: 1.8; color: var(--white); margin-bottom: 25px; font-weight: 300;">
@@ -41,6 +57,7 @@
             </p>
         </section>
 
+        <!-- SECTION 2: WHAT IS KALPAASI (THE INGREDIENT & ORIGINS) -->
         <section class="menu-section-container" style="padding: 50px 40px; margin-bottom: 40px; border-left: 3px solid var(--gold);">
             <h2 class="category-heading" style="margin-bottom: 20px;">The Story of Kalpaasi</h2>
             <p style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; line-height: 1.8; color: var(--white); margin-bottom: 20px; font-weight: 300;">
@@ -51,15 +68,18 @@
             </p>
         </section>
 
-        <section class="menu-block-card" style="display: grid !important; grid-template-columns: 1fr 1.3fr !important; min-height: auto !important; background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(197, 155, 78, 0.15); border-radius: 12px; overflow: hidden;">
+        <!-- SECTION 3: OWNER STORY VIDEO SPLIT SECTION -->
+        <section class="menu-block-card mobile-video-card" style="display: grid !important; grid-template-columns: 1fr 1.3fr !important; min-height: auto !important; background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(197, 155, 78, 0.15); border-radius: 12px; overflow: hidden;">
             
-            <div class="card-img-wrapper" style="position: relative !important; width: 100% !important; height: 100% !important; display: flex !important; background-color: #000; order: 1 !important;">
+            <!-- Left Side / Top on Mobile: Video Player Frame -->
+            <div class="card-img-wrapper mobile-video-wrapper" style="position: relative !important; width: 100% !important; height: 100% !important; display: flex !important; background-color: #000; order: 1 !important;">
                 <video controls style="width: 100%; height: 100%; object-fit: cover; display: block;" poster="images/Burger.jpg">
-                    <source src="videos/aboutKalpaasi.mp4" type="video/mp4">
+                    <source src="videos/VIDEO-2026-07-08-15-30-17.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
 
+            <!-- Right Side / Bottom on Mobile: Content and Quote Frame -->
             <div class="card-content-wrapper" style="width: 100% !important; padding: 50px 40px !important; display: flex !important; flex-direction: column !important; justify-content: center !important; order: 2 !important;">
                 <h3 class="category-heading" style="font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--gold); margin-bottom: 20px; letter-spacing: 1px;">Our Inspiration</h3>
                 <p style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; line-height: 1.8; font-style: italic; color: var(--cream); margin: 0;">
