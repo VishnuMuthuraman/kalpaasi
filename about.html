@@ -72,10 +72,10 @@
         <section class="menu-block-card">
             
             <!-- Video Player Box -->
-            <div class="card-img-wrapper">
-                <!-- Added playsinline, webkit-playsinline, and preload properties to fix cross-device playback -->
-                <video controls playsinline webkit-playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover; display: block;" poster="images/Burger.jpg">
-                    <source src="videos/aboutKalpaasi.mp4" type="video/mp4">
+            <div class="card-img-wrapper" style="pointer-events: auto !important; overflow: visible !important;">
+                <!-- Added onclick fallback so clicks bypass any hidden container layers -->
+                <video controls playsinline webkit-playsinline preload="metadata" onclick="this.paused ? this.play() : this.pause();" style="width: 100%; height: 100%; object-fit: cover; display: block; z-index: 10; position: relative;" poster="images/Burger.jpg">
+                    <source src="videos/VIDEO-2026-07-08-15-30-17.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
