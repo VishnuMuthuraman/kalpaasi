@@ -46,18 +46,19 @@
         </section>
 
         <!-- SECTION 2: THE STORY OF KALPAASI (TEXT LEFT, VIDEO RIGHT) -->
-        <section class="menu-block-card" style="margin-bottom: 40px; display: flex !important;">
+        <!-- SECTION 2: THE STORY OF KALPAASI (TEXT LEFT, VIDEO RIGHT) -->
+        <section class="menu-block-card" style="margin-bottom: 40px; transform: scaleX(-1) !important;">
             
-            <!-- Left Side: Content Box -->
-            <div class="card-content-wrapper" style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 40px;">
+            <!-- This text container will visually sit on the left -->
+            <div class="card-content-wrapper" style="transform: scaleX(-1) !important; display: flex; flex-direction: column; justify-content: center;">
                 <h2 class="category-heading" style="margin-bottom: 20px;">The Story of Kalpaasi</h2>
                 <p style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; line-height: 1.8; font-style: italic; color: var(--cream); margin: 0;">
                     "Here is the story behind Kalpaasi given by the owner Ramesh Palaniappan."
                 </p>
             </div>
 
-            <!-- Right Side: Video Player Box scaled perfectly to match the text box height -->
-            <div class="card-img-wrapper" style="flex: 1; pointer-events: auto !important; overflow: hidden !important; display: flex !important; align-self: stretch !important;">
+            <!-- This video container will visually sit on the right -->
+            <div class="card-img-wrapper" style="transform: scaleX(-1) !important; pointer-events: auto !important; overflow: hidden !important;">
                 <video controls playsinline webkit-playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover; display: block; z-index: 10; position: relative;">
                     <source src="videos/aboutKalpaasi.mp4" type="video/mp4">
                     Your browser does not support the video tag.
