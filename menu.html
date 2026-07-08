@@ -1,332 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu | Kalpaasi</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu | Kalpaasi</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles.css">
 
-    <!-- Responsive layout fixes: moved out of inline styles so mobile media queries can actually override them -->
-    <style>
-        /* ===== BUILD YOUR OWN BURGER ===== */
-        .byob-wrapper {
-            display: grid !important;
-            grid-template-columns: 2.2fr 1fr !important;
-            gap: 40px !important;
-            align-items: stretch !important;
-        }
-        .byob-board {
-            display: grid !important;
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 30px !important;
-        }
-        .byob-image-box {
-            position: static !important;
-            width: 100% !important;
-            height: 100% !important;
-            min-height: 100% !important;
-            overflow: hidden !important;
-            border-radius: 12px !important;
-        }
-        .byob-image-box img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important;
-            display: block !important;
-        }
-
-        /* ===== TWO-COLUMN CARDS: Taco Tarts / Sides / Dips / Beverages / Desserts ===== */
-        .menu-block-card {
-            display: grid !important;
-            grid-template-columns: 1fr 1.5fr !important;
-            min-height: auto !important;
-            position: relative !important;
-        }
-        .menu-block-card.reverse {
-            grid-template-columns: 1.5fr 1fr !important;
-        }
-        .menu-block-card .card-img-wrapper {
-            position: static !important;
-            top: auto !important;
-            bottom: auto !important;
-            width: 100% !important;
-            height: 100% !important;
-            order: 1 !important;
-            overflow: hidden !important;
-        }
-        .menu-block-card.reverse .card-img-wrapper {
-            order: 2 !important;
-        }
-        .menu-block-card .card-img-wrapper img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important;
-            display: block !important;
-        }
-        .menu-block-card .card-content-wrapper {
-            display: block !important;
-            position: static !important;
-            width: 100% !important;
-            padding: 40px !important;
-            margin: 0 !important;
-            order: 2 !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-        .menu-block-card.reverse .card-content-wrapper {
-            order: 1 !important;
-        }
-
-        /* ===== NAV: let it wrap instead of overflowing on narrow screens ===== */
-        @media (max-width: 600px) {
-            .navbar {
-                flex-wrap: wrap !important;
-                row-gap: 12px !important;
-            }
-            .nav-links {
-                flex-wrap: wrap !important;
-                justify-content: center !important;
-                gap: 14px !important;
-                width: 100% !important;
-            }
-        }
-
-        /* ===== TABLET / MOBILE: collapse every grid to a single column ===== */
-        @media (max-width: 768px) {
+        <!-- Responsive layout fixes: moved out of inline styles so mobile media queries can actually override them -->
+        <style>
+            /* ===== BUILD YOUR OWN BURGER ===== */
             .byob-wrapper {
-                grid-template-columns: 1fr !important;
-                gap: 24px !important;
+                display: grid !important;
+                grid-template-columns: 2.2fr 1fr !important;
+                gap: 40px !important;
+                align-items: stretch !important;
             }
             .byob-board {
-                grid-template-columns: 1fr !important;
-                gap: 28px !important;
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 30px !important;
             }
             .byob-image-box {
-                height: 220px !important;
-                min-height: 220px !important;
-                order: -1 !important; /* image up top, above the 3 columns */
+                position: static !important;
+                width: 100% !important;
+                height: 100% !important;
+                min-height: 100% !important;
+                overflow: hidden !important;
+                border-radius: 12px !important;
+            }
+            .byob-image-box img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                display: block !important;
             }
 
-            .menu-block-card,
+            /* ===== TWO-COLUMN CARDS: Taco Tarts / Sides / Dips / Beverages / Desserts ===== */
+            .menu-block-card {
+                display: grid !important;
+                grid-template-columns: 1fr 1.5fr !important;
+                min-height: auto !important;
+                position: relative !important;
+            }
             .menu-block-card.reverse {
-                grid-template-columns: 1fr !important;
+                grid-template-columns: 1.5fr 1fr !important;
             }
-            .menu-block-card .card-img-wrapper,
-            .menu-block-card.reverse .card-img-wrapper {
+            .menu-block-card .card-img-wrapper {
+                position: static !important;
+                top: auto !important;
+                bottom: auto !important;
+                width: 100% !important;
+                height: 100% !important;
                 order: 1 !important;
-                height: 220px !important;
+                overflow: hidden !important;
             }
-            .menu-block-card .card-content-wrapper,
-            .menu-block-card.reverse .card-content-wrapper {
-                order: 2 !important;
-                padding: 24px !important;
-            }
-        }
-
-        /* ===== SMALL PHONES: tighten spacing further ===== */
-        @media (max-width: 480px) {
-            .byob-image-box {
-                height: 180px !important;
-            }
-            .menu-block-card .card-img-wrapper,
             .menu-block-card.reverse .card-img-wrapper {
-                height: 180px !important;
+                order: 2 !important;
             }
-            .menu-block-card .card-content-wrapper,
+            .menu-block-card .card-img-wrapper img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                display: block !important;
+            }
+            .menu-block-card .card-content-wrapper {
+                display: block !important;
+                position: static !important;
+                width: 100% !important;
+                padding: 40px !important;
+                margin: 0 !important;
+                order: 2 !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
             .menu-block-card.reverse .card-content-wrapper {
-                padding: 20px !important;
+                order: 1 !important;
             }
-            .menu-main-title {
-                font-size: 2rem !important;
+
+            /* ===== NAV: let it wrap instead of overflowing on narrow screens ===== */
+            @media (max-width: 600px) {
+                .navbar {
+                    flex-wrap: wrap !important;
+                    row-gap: 12px !important;
+                }
+                .nav-links {
+                    flex-wrap: wrap !important;
+                    justify-content: center !important;
+                    gap: 14px !important;
+                    width: 100% !important;
+                }
             }
-        }
-    </style>
-</head>
-<body>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="navbar">
-        <div class="nav-logo"><a href="index.html">kalpaasi</a></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html" class="active">Menus</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+            /* ===== TABLET / MOBILE: collapse every grid to a single column ===== */
+            @media (max-width: 768px) {
+                .byob-wrapper {
+                    grid-template-columns: 1fr !important;
+                    gap: 24px !important;
+                }
+                .byob-board {
+                    grid-template-columns: 1fr !important;
+                    gap: 28px !important;
+                }
+                .byob-image-box {
+                    height: 220px !important;
+                    min-height: 220px !important;
+                    order: -1 !important; /* image up top, above the 3 columns */
+                }
 
-    <!-- MENU CONTAINER -->
-    <main class="menu-page-container">
-        <header class="menu-header">
-            <h1 class="menu-main-title">Our Menu</h1>
-            <p class="menu-subtitle">Chettinad Flavours, Reimagined</p>
-        </header>
+                .menu-block-card,
+                .menu-block-card.reverse {
+                    grid-template-columns: 1fr !important;
+                }
+                .menu-block-card .card-img-wrapper,
+                .menu-block-card.reverse .card-img-wrapper {
+                    order: 1 !important;
+                    height: 220px !important;
+                }
+                .menu-block-card .card-content-wrapper,
+                .menu-block-card.reverse .card-content-wrapper {
+                    order: 2 !important;
+                    padding: 24px !important;
+                }
+            }
 
-        <!-- CATEGORY: BUILD YOUR OWN BURGER -->
-        <section class="menu-section-container byob-section">
-            <h2 class="category-heading">Build Your Own Burger</h2>
+            /* ===== SMALL PHONES: tighten spacing further ===== */
+            @media (max-width: 480px) {
+                .byob-image-box {
+                    height: 180px !important;
+                }
+                .menu-block-card .card-img-wrapper,
+                .menu-block-card.reverse .card-img-wrapper {
+                    height: 180px !important;
+                }
+                .menu-block-card .card-content-wrapper,
+                .menu-block-card.reverse .card-content-wrapper {
+                    padding: 20px !important;
+                }
+                .menu-main-title {
+                    font-size: 2rem !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
 
-            <div class="byob-wrapper">
+        <!-- NAVIGATION BAR -->
+        <nav class="navbar">
+            <div class="nav-logo"><a href="index.html">kalpaasi</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menus</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-                <!-- Burger Customization Columns -->
-                <div class="byob-board">
-                    <!-- Step 1 -->
-                    <div class="byob-column">
-                        <h3 class="byob-step-title"><span>1</span> Choice of Bun</h3>
-                        <ul class="byob-list">
-                            <li>Carrot Ajwain Bun</li>
-                            <li>Beetroot Fennel Bun</li>
-                            <li>Five-Spice Spinach Bun</li>
-                            <li>Coriander Chilli Bun</li>
-                            <li>Tomato Curry Leaf Bun</li>
-                        </ul>
+        <!-- MENU CONTAINER -->
+        <main class="menu-page-container">
+            <header class="menu-header">
+                <h1 class="menu-main-title">Our Menu</h1>
+                <p class="menu-subtitle">Chettinad Flavours, Reimagined</p>
+            </header>
+
+            <!-- CATEGORY: BUILD YOUR OWN BURGER -->
+            <section class="menu-section-container byob-section">
+                <h2 class="category-heading">Build Your Own Burger</h2>
+
+                <div class="byob-wrapper">
+
+                    <!-- Burger Customization Columns -->
+                    <div class="byob-board">
+                        <!-- Step 1 -->
+                        <div class="byob-column">
+                            <h3 class="byob-step-title"><span>1</span> Choice of Bun</h3>
+                            <ul class="byob-list">
+                                <li>Carrot Ajwain Bun</li>
+                                <li>Beetroot Fennel Bun</li>
+                                <li>Five-Spice Spinach Bun</li>
+                                <li>Coriander Chilli Bun</li>
+                                <li>Tomato Curry Leaf Bun</li>
+                            </ul>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="byob-column">
+                            <h3 class="byob-step-title"><span>2</span> Choice of Filling</h3>
+                            <div class="filling-group-label">Non-Vegetarian</div>
+                            <ul class="byob-list">
+                                <li>Chicken Chettinad <span class="price">₹299</span></li>
+                                <li>Mutton Chettinad <span class="price">₹299</span></li>
+                                <li>Mixed Seafood <span class="price">₹399</span></li>
+                                <li>Seer Fish <span class="price">₹499</span></li>
+                                <li>Prawn <span class="price">₹499</span></li>
+                            </ul>
+                            <div class="filling-group-label vegetarian">Vegetarian</div>
+                            <ul class="byob-list">
+                                <li>Mixed Veg <span class="price">₹199</span></li>
+                                <li>Sweet Potato <span class="price">₹199</span></li>
+                                <li>Beetroot <span class="price">₹199</span></li>
+                                <li>Spicy Paneer <span class="price">₹199</span></li>
+                            </ul>
+                            <div class="menu-note">⚡ Every burger comes with a dip.</div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="byob-column">
+                            <h3 class="byob-step-title"><span>3</span> Choice of Sauce</h3>
+                            <ul class="byob-list">
+                                <li>Chettinad Sauce</li>
+                                <li>Coconut Chilli Sauce</li>
+                                <li>Malabar Sauce</li>
+                                <li>Fiery Sauce</li>
+                                <li>Chef's Special Sauce</li>
+                                <li>Spicy Tamarind Sauce</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <!-- Step 2 -->
-                    <div class="byob-column">
-                        <h3 class="byob-step-title"><span>2</span> Choice of Filling</h3>
-                        <div class="filling-group-label">Non-Vegetarian</div>
-                        <ul class="byob-list">
-                            <li>Chicken Chettinad <span class="price">₹299</span></li>
-                            <li>Mutton Chettinad <span class="price">₹299</span></li>
-                            <li>Mixed Seafood <span class="price">₹399</span></li>
-                            <li>Seer Fish <span class="price">₹499</span></li>
-                            <li>Prawn <span class="price">₹499</span></li>
-                        </ul>
-                        <div class="filling-group-label vegetarian">Vegetarian</div>
-                        <ul class="byob-list">
-                            <li>Mixed Veg <span class="price">₹199</span></li>
-                            <li>Sweet Potato <span class="price">₹199</span></li>
-                            <li>Beetroot <span class="price">₹199</span></li>
-                            <li>Spicy Paneer <span class="price">₹199</span></li>
-                        </ul>
-                        <div class="menu-note">⚡ Every burger comes with a dip.</div>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="byob-column">
-                        <h3 class="byob-step-title"><span>3</span> Choice of Sauce</h3>
-                        <ul class="byob-list">
-                            <li>Chettinad Sauce</li>
-                            <li>Coconut Chilli Sauce</li>
-                            <li>Malabar Sauce</li>
-                            <li>Fiery Sauce</li>
-                            <li>Chef's Special Sauce</li>
-                            <li>Spicy Tamarind Sauce</li>
-                        </ul>
+                    <!-- Live Burger Image Showcase -->
+                    <div class="byob-image-box">
+                        <img src="images/Burger.jpg" alt="Kalpaasi Signature Green Bun Burger" class="menu-display-photo">
                     </div>
                 </div>
 
-                <!-- Live Burger Image Showcase -->
-                <div class="byob-image-box">
-                    <img src="images/Burger.jpg" alt="Kalpaasi Signature Green Bun Burger" class="menu-display-photo">
+                <!-- Optional Add-ons -->
+                <div class="addons-bar">
+                    <span class="addons-title">Optional Add-Ons:</span>
+                    <span class="addon-item">Caramelised Onions</span> •
+                    <span class="addon-item">Buttered Broccoli</span>
                 </div>
+            </section>
+
+            <!-- TWO COLUMN CATEGORIES BLOCK -->
+            <div class="menu-flex-layout">
+
+                <!-- TACO TARTS -->
+                <section class="menu-block-card">
+                    <div class="card-img-wrapper">
+                        <img src="images/TacoTart.jpg" alt="Kalpaasi Savory Taco Tarts" class="menu-display-photo">
+                    </div>
+                    <div class="card-content-wrapper">
+                        <h2 class="category-heading">Taco Tarts</h2>
+                        <ul class="menu-items-list">
+                            <li><span>Mutton Pepper Fry</span> <span class="price">₹249</span></li>
+                            <li><span>Pallipalayam Chicken</span> <span class="price">₹249</span></li>
+                            <li><span>Prawn Ghee Roast</span> <span class="price">₹249</span></li>
+                            <li><span>Raw Mango & Coconut</span> <span class="price">₹149</span></li>
+                            <li><span>Mixed Bean & Bell Peppers</span> <span class="price">₹149</span></li>
+                            <li><span>Mushroom Pepper Fry</span> <span class="price">₹149</span></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SIDES -->
+                <section class="menu-block-card reverse">
+                    <div class="card-content-wrapper">
+                        <h2 class="category-heading">Sides</h2>
+                        <ul class="menu-items-list">
+                            <li><span>Mutton Kola Urundai</span> <span class="price">₹299</span></li>
+                            <li><span>Karuveppillai Prawn</span> <span class="price">₹299</span></li>
+                            <li><span>Chicken Ghee Roast</span> <span class="price">₹299</span></li>
+                            <li><span>Pallipalayam Paneer</span> <span class="price">₹199</span></li>
+                            <li><span>Raw Banana Croquettes</span> <span class="price">₹199</span></li>
+                            <li><span>Corn Bell Pepper Fry</span> <span class="price">₹199</span></li>
+                        </ul>
+                        <div class="menu-note">⚡ Every side comes with a dip.</div>
+                    </div>
+                    <div class="card-img-wrapper">
+                        <img src="images/Sides.jpg" alt="Kalpaasi Mutton Kola Urundai" class="menu-display-photo">
+                    </div>
+                </section>
+
+                <!-- DIPS -->
+                <section class="menu-block-card">
+                    <div class="card-img-wrapper">
+                        <img src="images/Dips.jpg" alt="Kalpaasi House Dips" class="menu-display-photo">
+                    </div>
+                    <div class="card-content-wrapper">
+                        <h2 class="category-heading">Dips <span class="heading-price">(₹15 each)</span></h2>
+                        <ul class="menu-items-list split-grid">
+                            <li>Curry Leaves Dip</li>
+                            <li>Mint Chilli Dip</li>
+                            <li>Spicy Mustard Dip</li>
+                            <li>Garlic Coriander Dip</li>
+                            <li>Spicy Tartar Dip</li>
+                            <li>Spicy Gongura Dip</li>
+                            <li>Honey Ginger Dip</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- BEVERAGES -->
+                <section class="menu-block-card reverse">
+                    <div class="card-content-wrapper">
+                        <h2 class="category-heading">Beverages - Sarbath <span class="heading-price">(₹79 each)</span></h2>
+                        <ul class="menu-items-list">
+                            <li>Lemon Nannari</li>
+                            <li>Watermelon Nannari</li>
+                            <li>Pineapple Nannari</li>
+                            <li>Apple Nannari</li>
+                        </ul>
+                    </div>
+                    <div class="card-img-wrapper">
+                        <img src="images/Beverages.jpg" alt="Kalpaasi Signature Nannari Sarbath" class="menu-display-photo">
+                    </div>
+                </section>
+
+                <!-- DESSERTS -->
+                <section class="menu-block-card">
+                    <div class="card-img-wrapper">
+                        <img src="images/Desserts.jpg" alt="Kalpaasi Signature Athirasam Cake" class="menu-display-photo">
+                    </div>
+                    <div class="card-content-wrapper">
+                        <h2 class="category-heading">Desserts <span class="heading-price">(₹149 each)</span></h2>
+                        <ul class="menu-items-list split-grid">
+                            <li>Grandma's Apple Halwa</li>
+                            <li>Kavuni Arisi</li>
+                            <li>Carrot Cake</li>
+                            <li>Athirasam Cake</li>
+                        </ul>
+                    </div>
+                </section>
+
             </div>
+        </main>
 
-            <!-- Optional Add-ons -->
-            <div class="addons-bar">
-                <span class="addons-title">Optional Add-Ons:</span>
-                <span class="addon-item">Caramelised Onions</span> •
-                <span class="addon-item">Buttered Broccoli</span>
-            </div>
-        </section>
-
-        <!-- TWO COLUMN CATEGORIES BLOCK -->
-        <div class="menu-flex-layout">
-
-            <!-- TACO TARTS -->
-            <section class="menu-block-card">
-                <div class="card-img-wrapper">
-                    <img src="images/TacoTart.jpg" alt="Kalpaasi Savory Taco Tarts" class="menu-display-photo">
-                </div>
-                <div class="card-content-wrapper">
-                    <h2 class="category-heading">Taco Tarts</h2>
-                    <ul class="menu-items-list">
-                        <li><span>Mutton Pepper Fry</span> <span class="price">₹249</span></li>
-                        <li><span>Pallipalayam Chicken</span> <span class="price">₹249</span></li>
-                        <li><span>Prawn Ghee Roast</span> <span class="price">₹249</span></li>
-                        <li><span>Raw Mango & Coconut</span> <span class="price">₹149</span></li>
-                        <li><span>Mixed Bean & Bell Peppers</span> <span class="price">₹149</span></li>
-                        <li><span>Mushroom Pepper Fry</span> <span class="price">₹149</span></li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- SIDES -->
-            <section class="menu-block-card reverse">
-                <div class="card-content-wrapper">
-                    <h2 class="category-heading">Sides</h2>
-                    <ul class="menu-items-list">
-                        <li><span>Mutton Kola Urundai</span> <span class="price">₹299</span></li>
-                        <li><span>Karuveppillai Prawn</span> <span class="price">₹299</span></li>
-                        <li><span>Chicken Ghee Roast</span> <span class="price">₹299</span></li>
-                        <li><span>Pallipalayam Paneer</span> <span class="price">₹199</span></li>
-                        <li><span>Raw Banana Croquettes</span> <span class="price">₹199</span></li>
-                        <li><span>Corn Bell Pepper Fry</span> <span class="price">₹199</span></li>
-                    </ul>
-                    <div class="menu-note">⚡ Every side comes with a dip.</div>
-                </div>
-                <div class="card-img-wrapper">
-                    <img src="images/Sides.jpg" alt="Kalpaasi Mutton Kola Urundai" class="menu-display-photo">
-                </div>
-            </section>
-
-            <!-- DIPS -->
-            <section class="menu-block-card">
-                <div class="card-img-wrapper">
-                    <img src="images/Dips.jpg" alt="Kalpaasi House Dips" class="menu-display-photo">
-                </div>
-                <div class="card-content-wrapper">
-                    <h2 class="category-heading">Dips <span class="heading-price">(₹15 each)</span></h2>
-                    <ul class="menu-items-list split-grid">
-                        <li>Curry Leaves Dip</li>
-                        <li>Mint Chilli Dip</li>
-                        <li>Spicy Mustard Dip</li>
-                        <li>Garlic Coriander Dip</li>
-                        <li>Spicy Tartar Dip</li>
-                        <li>Spicy Gongura Dip</li>
-                        <li>Honey Ginger Dip</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- BEVERAGES -->
-            <section class="menu-block-card reverse">
-                <div class="card-content-wrapper">
-                    <h2 class="category-heading">Beverages - Sarbath <span class="heading-price">(₹79 each)</span></h2>
-                    <ul class="menu-items-list">
-                        <li>Lemon Nannari</li>
-                        <li>Watermelon Nannari</li>
-                        <li>Pineapple Nannari</li>
-                        <li>Apple Nannari</li>
-                    </ul>
-                </div>
-                <div class="card-img-wrapper">
-                    <img src="images/Beverages.jpg" alt="Kalpaasi Signature Nannari Sarbath" class="menu-display-photo">
-                </div>
-            </section>
-
-            <!-- DESSERTS -->
-            <section class="menu-block-card">
-                <div class="card-img-wrapper">
-                    <img src="images/Desserts.jpg" alt="Kalpaasi Signature Athirasam Cake" class="menu-display-photo">
-                </div>
-                <div class="card-content-wrapper">
-                    <h2 class="category-heading">Desserts <span class="heading-price">(₹149 each)</span></h2>
-                    <ul class="menu-items-list split-grid">
-                        <li>Grandma's Apple Halwa</li>
-                        <li>Kavuni Arisi</li>
-                        <li>Carrot Cake</li>
-                        <li>Athirasam Cake</li>
-                    </ul>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-</body>
+    </body>
 </html>

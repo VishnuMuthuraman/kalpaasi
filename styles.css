@@ -528,7 +528,8 @@ body {
     .card-img-wrapper,
     .menu-block-card.reverse .card-img-wrapper {
         order: 1; /* image always on top on mobile */
-        height: 260px;
+        height: auto;
+        aspect-ratio: 4 / 3;
     }
 
     .card-content-wrapper,
@@ -539,10 +540,6 @@ body {
 }
 
 @media (max-width: 480px) {
-    .card-img-wrapper,
-    .menu-block-card.reverse .card-img-wrapper {
-        height: 200px;
-    }
     .card-content-wrapper,
     .menu-block-card.reverse .card-content-wrapper {
         padding: 24px 18px;
