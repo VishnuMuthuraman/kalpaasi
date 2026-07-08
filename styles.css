@@ -511,7 +511,11 @@ body {
     }
     .byob-image-box {
         width: 100%;
-        max-height: 300px;
+        height: auto;
+    }
+    .byob-image-box img {
+        height: auto !important; /* image sizes itself from its own natural aspect ratio, nothing gets cropped */
+        object-fit: contain !important;
     }
 }
 
