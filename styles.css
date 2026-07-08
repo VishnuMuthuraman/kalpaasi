@@ -319,62 +319,29 @@ body {
     vertical-align: middle;
 }
 
-/* ------------------------------------------------------------------
-   BYOB LAYOUT  (rebuilt — only this block changed)
-   ------------------------------------------------------------------
-   Old behaviour: the three steps sat in an auto-fit grid that only fit
-   two columns at this width. "Choice of Sauce" wrapped to a second row
-   that began *below* the very tall Filling column, so it was orphaned
-   near the bottom with a big empty gap. The photo used stretch, so it
-   was forced to match that over-tall board and became a cropped sliver.
-
-   New behaviour (works with the existing HTML, .byob-board wrapper and
-   all):
-     .byob-wrapper  ->  two columns:  [ .byob-board | photo ]
-     .byob-board    ->  named-area grid:
-                          "bun     filling"
-                          "sauce   filling"
-                        i.e. Bun on top / Sauce below it in column 1,
-                        and the long Filling list spanning both rows in
-                        column 2. Bun+Sauce ~= Filling in height, so the
-                        blocks stay aligned, nothing is orphaned, and the
-                        section is shorter. The photo sits in a balanced
-                        portrait frame instead of a stretched strip.
-   ------------------------------------------------------------------ */
+/* BYOB Flex Wrapper for side-by-side photo layout */
 .byob-wrapper {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(260px, 0.9fr); /* steps | photo */
-    gap: 40px;
+    display: flex;
+    gap: 30px;
     align-items: stretch;
 }
 
+/* BYOB Board - Left Side Columns */
 .byob-board {
-    min-width: 0;
+    flex: 2;
+    min-width: 0; /* Prevents flex item from refusing to shrink below its grid content's min-width (Safari overflow bug) */
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-        "bun     filling"
-        "sauce   filling";
-    align-items: start;
-    column-gap: 30px;
-    row-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
 }
 
-/* Placed by source order: 1 = Bun, 2 = Filling, 3 = Sauce */
-.byob-column:nth-child(1) { grid-area: bun; }
-.byob-column:nth-child(2) { grid-area: filling; }
-.byob-column:nth-child(3) { grid-area: sauce; }
-
+/* BYOB Image Box - Right Side Photo Frame */
 .byob-image-box {
-    align-self: stretch;      /* fills the height of the steps column */
-    min-height: 100%;
+    flex: 1;
+    min-width: 280px;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid rgba(197, 155, 78, 0.2);
-}
-
-.byob-image-box .menu-display-photo {
-    object-position: center !important; /* keep the burger centred, not clipped low */
 }
 
 .byob-step-title {
@@ -452,7 +419,16 @@ body {
     margin-right: 10px;
 }
 
-/* Two Column Layout Cards for Photos + Text (unchanged) */
+/* Two Column Layout Cards for Photos + Text
+   ---------------------------------------------------------
+   Rebuilt with CSS Grid instead of absolute-positioned image
+   + percentage-width text. The old approach required exact
+   width/margin math between .card-img-wrapper and
+   .card-content-wrapper to avoid overlap, and it was easy for
+   them to drift out of sync (which is what was covering your
+   menu text). Grid removes that failure mode entirely: each
+   side is a real grid track, so they can never overlap.
+   ---------------------------------------------------------- */
 .menu-flex-layout {
     display: flex;
     flex-direction: column;
@@ -527,31 +503,26 @@ body {
 
 /* Unified Mobile and Tablet Media Queries */
 @media (max-width: 992px) {
-    /* BYOB collapses to one column: photo on top, then Bun -> Filling -> Sauce */
     .byob-wrapper {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
     .byob-board {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "bun"
-            "filling"
-            "sauce";
-        row-gap: 30px;
+        grid-template-columns: 1fr; /* Explicit override, since auto-fit alone doesn't reliably shrink flex-grid children on iOS Safari */
     }
     .byob-image-box {
-        order: -1;          /* photo banner on top */
-        align-self: auto;
-        min-height: 0;
-        height: 320px;
+        width: 100%;
+        height: 340px;
+    }
+    .byob-image-box img {
+        height: 100% !important; /* fills the box, cropping only from the top */
+        object-fit: cover !important;
+        object-position: center bottom !important; /* always keeps the plate fully visible at the bottom */
     }
 }
 
 @media (max-width: 768px) {
     .menu-page-container { padding-top: 180px; }
     .menu-main-title { font-size: 2.8rem; }
-
-    .byob-image-box { height: 260px; } /* BYOB-only banner tweak */
 
     /* Collapse every two-column card to a single stacked column */
     .menu-block-card,
