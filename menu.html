@@ -8,6 +8,50 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
+
+    <!-- MOBILE RESPONSIVE PATCH FOR BYOB BOARD -->
+    <style>
+        @media screen and (max-width: 768px) {
+            /* Force the squished side-by-side columns to stack vertically */
+            .byob-board {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 30px !important;
+            }
+
+            /* Expand each column to use full width so text doesn't warp */
+            .byob-column {
+                width: 100% !important;
+            }
+
+            /* Make the step numbers perfect, un-skewed circles */
+            .byob-step-title span {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 28px !important;
+                height: 28px !important;
+                border-radius: 50% !important;
+                flex-shrink: 0 !important;
+                margin-right: 10px !important;
+            }
+
+            /* Clean up list item row layout for items with prices */
+            .byob-list li {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                white-space: nowrap !important;
+            }
+
+            /* Clean stack for the parent wrapper */
+            .byob-wrapper {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 40px !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -54,18 +98,18 @@
                         <h3 class="byob-step-title"><span>2</span> Choice of Filling</h3>
                         <div class="filling-group-label">Non-Vegetarian</div>
                         <ul class="byob-list">
-                            <li>Chicken Chettinad <span class="price">₹299</span></li>
-                            <li>Mutton Chettinad <span class="price">₹299</span></li>
-                            <li>Mixed Seafood <span class="price">₹399</span></li>
-                            <li>Seer Fish <span class="price">₹499</span></li>
-                            <li>Prawn <span class="price">₹499</span></li>
+                            <li><span>Chicken Chettinad</span> <span class="price">₹299</span></li>
+                            <li><span>Mutton Chettinad</span> <span class="price">₹299</span></li>
+                            <li><span>Mixed Seafood</span> <span class="price">₹399</span></li>
+                            <li><span>Seer Fish</span> <span class="price">₹499</span></li>
+                            <li><span>Prawn</span> <span class="price">₹499</span></li>
                         </ul>
                         <div class="filling-group-label vegetarian">Vegetarian</div>
                         <ul class="byob-list">
-                            <li>Mixed Veg <span class="price">₹199</span></li>
-                            <li>Sweet Potato <span class="price">₹199</span></li>
-                            <li>Beetroot <span class="price">₹199</span></li>
-                            <li>Spicy Paneer <span class="price">₹199</span></li>
+                            <li><span>Mixed Veg</span> <span class="price">₹199</span></li>
+                            <li><span>Sweet Potato</span> <span class="price">₹199</span></li>
+                            <li><span>Beetroot</span> <span class="price">₹199</span></li>
+                            <li><span>Spicy Paneer</span> <span class="price">₹199</span></li>
                         </ul>
                         <div class="menu-note">Every burger comes with a dip.</div>
                     </div>
